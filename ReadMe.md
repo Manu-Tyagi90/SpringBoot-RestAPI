@@ -115,18 +115,18 @@ This project demonstrates CRUD (Create, Read, Update, Delete) operations using S
 ## Media Gallery
 
 ### Desktop Views
-![Dashboard Desktop View](./src/main/resources/static/Assets/images/Cloud%20Management%20Dashboard%20Desktop.png)
-![Vendors Desktop View](./src/main/resources/static/Assets/images/Cloud%20Management%20Vendors%20Desktop.png)
-![Settings Desktop View](./src/main/resources/static/Assets/images/Cloud%20Management%20Settings%20Desktop.png)
+![Dashboard Desktop View](./src/main/resources/static/Assets/Cloud%2520Management%2520Dashboard%2520Desktop.png)
+![Vendors Desktop View](./src/main/resources/static/Assets/Cloud%20Management%20Vendors%20Desktop.png)
+![Settings Desktop View](./src/main/resources/static/Assets/Cloud%20Management%20Settings%20Desktop.png)
 
 ### Mobile Views
-![Dashboard Mobile View](./src/main/resources/static/Assets/images/Cloud%20Management%20Dashboard%20Mobile%20View.png)
-![Vendors Mobile View](./src/main/resources/static/Assets/images/Cloud%20Management%20Vendors%20Mobile%20View.png)
-![Settings Mobile View](./src/main/resources/static/Assets/images/Cloud%20Management%20Settings%20Mobile%20View.png)
+![Dashboard Mobile View](./src/main/resources/static/Assets/Cloud%20Management%20Dashboard%20Mobile%20View.png)
+![Vendors Mobile View](./src/main/resources/static/Assets/Cloud%20Management%20Vendors%20Mobile%20View.png)
+![Settings Mobile View](./src/main/resources/static/Assets/Cloud%20Management%20Settings%20Mobile%20View.png)
 
 ### Demo Videos
-- [Desktop Demo](./src/main/resources/static/Assets/videos/Cloud%20Management%20Desktop.webm)
-- [Mobile Demo](./src/main/resources/static/Assets/videos/Cloud%20Management%20Mobile.webm)
+- [Desktop Demo](./src/main/resources/static/Assets/Cloud%20Management%20Desktop.webm)
+- [Mobile Demo](./src/main/resources/static/Assets/Cloud%20Management%20Mobile.webm)
 
 ## Contributing
 Contributions are welcome! Please fork the repository and submit a pull request.
