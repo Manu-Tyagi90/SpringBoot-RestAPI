@@ -125,8 +125,9 @@ This project demonstrates CRUD (Create, Read, Update, Delete) operations using S
 ![Settings Mobile View](./src/main/resources/static/Assets/Cloud%20Management%20Settings%20Mobile%20View.png)
 
 ### Demo Videos
-- [Desktop Demo](./src/main/resources/static/Assets/Cloud%20Management%20Desktop.webm)
-- [Mobile Demo](./src/main/resources/static/Assets/Cloud%20Management%20Mobile.webm)
+[Desktop Demo](https://github.com/user-attachments/assets/1db31b02-cb70-4540-af9b-c84a906e974e)
+[Mobile Demo](https://github.com/user-attachments/assets/fb7526a0-914d-4b1a-8238-225dc32391d3)
+
 
 ## Contributing
 Contributions are welcome! Please fork the repository and submit a pull request.
