@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Vendor Management</title>
+    <!-- Add UI Framework and Notification Library -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Mobile Navigation Toggle -->
+    <button class="mobile-nav-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </button>
+
+    <!-- Replace the mobile navigation section with: -->
+    <nav class="mobile-top-nav">
+        <ul class="mobile-nav-menu">
+            <li>
+                <a href="#dashboard" class="mobile-nav-item active" data-section="dashboard">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="#vendors" class="mobile-nav-item" data-section="vendors">
+                    <i class="fas fa-users"></i>
+                    <span>Vendors</span>
+                </a>
+            </li>
+            <li>
+                <a href="#settings" class="mobile-nav-item" data-section="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="app-container">
+        <aside class="sidebar">
+            <h2>Cloud Management</h2>
+            <nav>
+                <ul>
+                    <li><a href="#dashboard" class="nav-link active" data-section="dashboard">Dashboard</a></li>
+                    <li><a href="#vendors" class="nav-link" data-section="vendors">Vendors</a></li>
+                    <li><a href="#settings" class="nav-link" data-section="settings">Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="section active">
+                <div class="card fade-in">
+                    <h2>Dashboard Overview</h2>
+                    <div class="dashboard-stats">
+                        <div class="stat-card">
+                            <h3>Total Vendors</h3>
+                            <p id="totalVendors">Loading...</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Last Updated</h3>
+                            <p id="lastUpdated">Never</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vendors Section -->
+            <section id="vendors" class="section">
+                <!-- Enhanced Form Card -->
+                <div class="card form-card fade-in">
+                    <h2><i class="fas fa-plus-circle"></i> Add/Update Vendor</h2>
+                    <form id="vendorForm" class="vendor-form">
+                        <div class="form-group">
+                            <i class="fas fa-id-card"></i>
+                            <input type="number" 
+                                   id="vendorId" 
+                                   class="input" 
+                                   placeholder="Vendor ID" 
+                                   required 
+                                   min="0" 
+                                   step="1" 
+                                   oninput="validateVendorId(this)"
+                                   onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="vendorName" class="input" placeholder="Vendor Name" required>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" id="submitBtn" class="btn btn-primary">
+                                <i class="fas fa-save"></i> Add Vendor
+                            </button>
+                            <button type="button" id="updateBtn" class="btn btn-secondary">
+                                <i class="fas fa-edit"></i> Update
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Enhanced Search Card -->
+                <div class="card search-card fade-in">
+                    <h2><i class="fas fa-search"></i> Search Vendors</h2>
+                    <div class="search-container">
+                        <input type="text" id="searchId" class="input" placeholder="Search by ID">
+                        <button onclick="searchVendor()" class="btn btn-primary">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Enhanced Vendors List -->
+                <div class="card vendors-card fade-in">
+                    <h2><i class="fas fa-list"></i> Vendors List</h2>
+                    <!-- Loading Skeleton -->
+                    <div class="skeleton-loader">
+                        <div class="vendors-grid">
+                            <div class="vendor-card skeleton">
+                                <div class="h-32 rounded-lg mb-4"></div>
+                            </div>
+                            <div class="vendor-card skeleton">
+                                <div class="h-32 rounded-lg mb-4"></div>
+                            </div>
+                            <div class="vendor-card skeleton">
+                                <div class="h-32 rounded-lg mb-4"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="vendorsList" class="vendors-grid"></div>
+                    <!-- Infinite Scroll Sentinel -->
+                    <div id="sentinel"></div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="section">
+                <div class="card fade-in">
+                    <h2><i class="fas fa-cog"></i> Settings</h2>
+                    <form id="settingsForm" class="settings-form">
+                        <div class="form-group">
+                            <label><i class="fas fa-palette"></i> Theme</label>
+                            <select id="themeSelect" class="input">
+                                <option value="light">Light Theme</option>
+                                <option value="dark">Dark Theme</option>
+                            </select>
+                            <p class="help-text">Theme changes are applied immediately</p>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-list-ol"></i> Items per Page</label>
+                            <input type="number" id="itemsPerPage" class="input" min="5" max="50" value="10">
+                            <p class="help-text">Requires page refresh to take effect</p>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i> Save Settings
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div class="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

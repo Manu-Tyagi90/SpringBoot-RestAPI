@@ -1,0 +1,9 @@
+.toast-success {
+    background: #4caf50 !important;
+    border-radius: 4px;
+}
+
+.toast-error {
+    background: #f44336 !important;
+    border-radius: 4px;
+}
