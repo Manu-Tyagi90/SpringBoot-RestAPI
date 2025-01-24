@@ -11,7 +11,7 @@ This project demonstrates CRUD (Create, Read, Update, Delete) operations using S
 ## Installation
 1. Clone the repository:
    ```bash
-   [git clone https://github.com/yourusername/Rest-API-CRUD-Operations1.git](https://github.com/Manu-Tyagi90/SpringBoot-RestAPI.git)
+   git clone https://github.com/Manu-Tyagi90/SpringBoot-RestAPI.git
    ```
 2. Navigate to the project directory:
    ```bash
