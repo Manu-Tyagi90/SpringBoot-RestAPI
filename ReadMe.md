@@ -1,16 +1,21 @@
 # SpringBoot Rest API CRUD Operations
+### Demo Videos
 
+[Desktop Demo](https://github.com/user-attachments/assets/1db31b02-cb70-4540-af9b-c84a906e974e)
+
+-------------------------------------------------------------------------------------------------
+[Mobile Demo](https://github.com/user-attachments/assets/fb7526a0-914d-4b1a-8238-225dc32391d3)
 ## Overview
 This project demonstrates CRUD (Create, Read, Update, Delete) operations using Spring Boot and a RESTful API.
 
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/Rest-API-CRUD-Operations1.git
+   [git clone https://github.com/yourusername/Rest-API-CRUD-Operations1.git](https://github.com/Manu-Tyagi90/SpringBoot-RestAPI.git)
    ```
 2. Navigate to the project directory:
    ```bash
-   cd Rest-API-CRUD-Operations1
+   cd SpringBoot-RestAPI
    ```
 3. Build the project:
    ```bash
@@ -123,10 +128,6 @@ This project demonstrates CRUD (Create, Read, Update, Delete) operations using S
 ![Dashboard Mobile View](./src/main/resources/static/Assets/Cloud%20Management%20Dashboard%20Mobile%20View.png)
 ![Vendors Mobile View](./src/main/resources/static/Assets/Cloud%20Management%20Vendors%20Mobile%20View.png)
 ![Settings Mobile View](./src/main/resources/static/Assets/Cloud%20Management%20Settings%20Mobile%20View.png)
-
-### Demo Videos
-[Desktop Demo](https://github.com/user-attachments/assets/1db31b02-cb70-4540-af9b-c84a906e974e)
-[Mobile Demo](https://github.com/user-attachments/assets/fb7526a0-914d-4b1a-8238-225dc32391d3)
 
 
 ## Contributing
