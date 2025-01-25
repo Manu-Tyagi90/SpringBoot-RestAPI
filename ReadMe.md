@@ -8,6 +8,32 @@
 ## Overview
 This project demonstrates CRUD (Create, Read, Update, Delete) operations using Spring Boot and a RESTful API.
 
+## Project Structure 
+```plaintext
+SpringBoot-RestAPI/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/example/springbootrestapi/  # Base package
+│   │   │       ├── controller/      # REST API endpoints (e.g., UserController.java)
+│   │   │       ├── service/         # Business logic (e.g., UserService.java)
+│   │   │       ├── repository/      # Database layer (e.g., UserRepository.java)
+│   │   │       ├── model/           # Entities (e.g., User.java)
+│   │   │       ├── config/          # Configuration classes (e.g., SwaggerConfig.java)
+│   │   │       ├── exception/       # Custom exceptions (e.g., ResourceNotFoundException.java)
+│   │   │       └── SpringBootRestApiApplication.java  # Main class
+│   │   └── resources/
+│   │       ├── static/              # Static assets (CSS, JS, images)
+│   │       ├── templates/           # HTML templates (if using Thymeleaf)
+│   │       ├── application.properties  # Configuration (DB, server port, etc.)
+│   │       └── data.sql             # Initial data (optional)
+│   └── test/                        # Unit/integration tests
+├── .gitignore
+├── pom.xml                          # Maven dependencies
+├── README.md                        # Project documentation
+└── target/                          # Compiled code (generated after build)
+```
+
 ## Installation
 1. Clone the repository:
    ```bash
